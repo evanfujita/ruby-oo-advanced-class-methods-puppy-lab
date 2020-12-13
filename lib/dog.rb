@@ -2,32 +2,32 @@ require 'pry'
 
 class Dog
 
-    @@all = []
+    @@all = [ ] 
 
-    attr_reader :name
+    attr_accessor :name
 
     def initialize(name)
         @name = name
-        self.save
+        save
+
     end
 
     def self.all
         @@all
-    end
+    end 
 
     def self.clear_all
-        @@all = []
+        @@all = [ ]
     end
 
     def self.print_all
-        @@all.each do |dog_name|
-            puts dog_name.name
-        end
+        self.all.each {|dog| puts dog.name}
     end
 
     def save
         @@all << self
     end
+
 
 end
 
